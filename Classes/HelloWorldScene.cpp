@@ -32,10 +32,10 @@ bool HelloWorld::init()
         return false;
     }
 
-    CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("pickup.caf");
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("pew-pew-lei.wav");
     CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("hit.caf");
-    CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("move.caf");
-    CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("TileMap.caf");
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->preloadEffect("pew-pew-lei.wav");
+    CocosDenshion::SimpleAudioEngine::sharedEngine()->playBackgroundMusic("background-music-aac.wav");
 
     _tileMap = new CCTMXTiledMap();
     _tileMap->initWithTMXFile("TileMap.tmx");
@@ -121,11 +121,11 @@ void HelloWorld::setPlayerPosition(CCPoint position) {
 			    _foreground->removeTileAt(tileCoord);
 			    _numCollected++;
 			    _hud->numCollectedChanged(_numCollected);
-			    CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("pickup.caf");
+			    CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("pew-pew-lei.wav");
 			}
 		}
 	}
-	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("move.caf");
+	CocosDenshion::SimpleAudioEngine::sharedEngine()->playEffect("pew-pew-lei.wav");
 	_player->setPosition(position);
 }
 
